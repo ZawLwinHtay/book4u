@@ -1,0 +1,34 @@
+.dropdown-toggle::after {
+  content: none;
+}
+
+.card-bg {
+  background: #253341;
+}
+
+.wh-30 {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.d-and-t {
+  font-size: 10px !important;
+}
+
+.view {
+  font-size: 10px !important;
+  width: 95px !important;
+}
+
+@media screen and (max-width: 778px) {
+  p,
+  .view {
+    font-size: 10px !important;
+  }
+  .view {
+    width: 100px !important;
+  }
+}

@@ -1,0 +1,6 @@
+splid
+swiper
+fontawesome
+slick
+bootstrap
+animate.css
