@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Kurale&display=swap");
+
 :root {
   --primary-color: #0d6efd;
   --text-color: #b4afab;
@@ -12,6 +14,11 @@ html {
 body {
   background: var(--body-bg);
   overflow-x: hidden;
+  font-family: "Kurale", serif;
+}
+
+.logo-font {
+  font-family: "Allerta Stencil", sans-serif;
 }
 
 .outline-none {
@@ -38,9 +45,14 @@ body {
   justify-content: center;
 }
 
-.wh-25 {
+.wh-25{
   width: 25px;
   height: 25px;
+}
+
+.wh-40 {
+  width: 40px;
+  height: 40px;
 }
 
 .wh-50 {
@@ -49,8 +61,8 @@ body {
 }
 
 .wh-80 {
-  width: 1100px !important;
-  height: 90px !important;
+  width: 80px !important;
+  height: 80px !important;
 }
 
 .h-80px {
@@ -162,6 +174,10 @@ body {
   box-shadow: 3px 3px 6px #000;
 }
 
+.shadow-md {
+  box-shadow: 2px 2px 4px #000;
+}
+
 .swiper-slide img {
   display: block;
   height: 100%;
@@ -244,6 +260,16 @@ body {
   bottom: 0;
 }
 
+/* featured books and writers */
+
+.featured-writers {
+  overflow-y: scroll !important;
+}
+
+.featured-height {
+  height: 380px;
+}
+
 @media screen and (max-width: 992px) {
   .nav-bar-container {
     z-index: 100 !important;
@@ -260,6 +286,23 @@ body {
     width: 100% !important;
     margin-bottom: 5px;
   }
+
+  .writer-text h5{
+    font-size: 13px;
+  }
+
+  .writer-text p{
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .featured-books {
+    height: auto;
+  }
+  .featured-writers {
+    height: 460px;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -268,6 +311,11 @@ body {
 @media screen and (min-width: 992px) {
   .w-lg-25 {
     width: 25% !important;
+  }
+
+  .wh-lg-50 {
+    width: 50px;
+    height: 50px;
   }
 
   .offcanvas {
