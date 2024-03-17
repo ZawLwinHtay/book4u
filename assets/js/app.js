@@ -4,7 +4,6 @@ var swiper = new Swiper(".bookSlider", {
   centeredSlides: true,
   slidesPerView: "auto",
   spaceBetween: 40,
-  // mousewheel: true,
   keyboard: {
     enabled: true,
   },
@@ -24,6 +23,17 @@ var swiper = new Swiper(".bookSlider", {
   },
   loop: true,
 });
+
+var favoriteReads = new Splide(".favoriteReads", {
+  type: "loop",
+  perPage: 3,
+  autoplay: "play",
+  breakpoints: {
+    768: { perPage: 2},
+    640: { perPage: 1},
+  },
+});
+favoriteReads.mount();
 
 // swiper
 // function slider(id) {

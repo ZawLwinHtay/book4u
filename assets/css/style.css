@@ -270,6 +270,17 @@ body {
   height: 380px;
 }
 
+/* favorite reads */
+div.progress{
+  height: 8px;
+  background: var(--hover-soft);
+}
+
+.readNowBtn:hover span{
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 992px) {
   .nav-bar-container {
     z-index: 100 !important;
