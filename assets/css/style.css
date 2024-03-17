@@ -2,6 +2,7 @@
   --primary-color: #0d6efd;
   --text-color: #b4afab;
   --hover-soft: #c6e3eb80;
+  --body-bg: #ecf2ff;
 }
 
 html {
@@ -9,7 +10,8 @@ html {
 }
 
 body {
-  background: #fbfcff;
+  background: var(--body-bg);
+  overflow-x: hidden;
 }
 
 .outline-none {
@@ -20,6 +22,14 @@ body {
 
 .text-color {
   color: var(--text-color);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.p-block {
+  padding-block: 5rem 0;
 }
 
 .flex-center {
@@ -75,6 +85,16 @@ body {
   color: #fff;
 }
 
+section,
+.navbar-collapse,
+.navbar {
+  background: var(--body-bg) !important;
+}
+
+.offcanvas {
+  background: #fff !important;
+}
+
 /* navbar */
 .show-hide-btn {
   transition: 0.2s;
@@ -95,16 +115,16 @@ body {
   background: none;
 }
 
-.accordion-body .list-group-item.active button {
+.accordion-body .list-group-item.active a {
   background: var(--hover-soft) !important;
   color: var(--primary-color);
 }
 
-.accordion-body .list-group-item button {
+.accordion-body .list-group-item a {
   transition: 0.3s;
 }
 
-.accordion-body .list-group-item button:hover {
+.accordion-body .list-group-item a:hover {
   background: var(--hover-soft) !important;
   color: var(--primary-color);
   color: var(--primary-color);
@@ -139,11 +159,7 @@ body {
   overflow: hidden;
   border: 2px solid #fff;
   transition: 0.3s;
-  box-shadow: 6px 6px 6px #000;
-}
-
-.swiper-slide.swiper-slide-active {
-  /* border: 3px solid var(--primary-color); */
+  box-shadow: 3px 3px 6px #000;
 }
 
 .swiper-slide img {
@@ -163,11 +179,6 @@ body {
 
 .show-top-btn {
   bottom: 20px;
-}
-
-/* home */
-.home {
-  padding-block: 5rem 0;
 }
 
 /* .next-pre .splide__arrows {
@@ -196,6 +207,42 @@ body {
   right: initial;
   left: initial;
 } */
+
+/* browse books */
+.browse-book-card {
+  overflow: hidden;
+  box-shadow: 2px 2px 8px #b2bec0;
+  border: 2px solid;
+}
+.card .cover {
+  width: 100%;
+  height: 0%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(30px);
+  opacity: 0.5;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 0.3s;
+}
+
+.browse-book-card:hover .cover {
+  height: 100%;
+}
+
+.view-book-btn {
+  position: absolute;
+  width: 100%;
+  right: 0;
+  bottom: -50px;
+  border-radius: 0;
+  transition: 0.3s;
+  font-size: 12px;
+}
+
+.browse-book-card:hover .view-book-btn {
+  bottom: 0;
+}
 
 @media screen and (max-width: 992px) {
   .nav-bar-container {

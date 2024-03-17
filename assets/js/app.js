@@ -1,10 +1,10 @@
-var swiper = new Swiper(".mySwiper", {
+var swiper = new Swiper(".bookSlider", {
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
   slidesPerView: "auto",
   spaceBetween: 40,
-  mousewheel: true,
+  // mousewheel: true,
   keyboard: {
     enabled: true,
   },

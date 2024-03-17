@@ -4,3 +4,11 @@ fontawesome
 slick
 bootstrap
 animate.css
+
+Resources
+==========
+https://templates.iqonic.design/booksto/html/index.html
+
+img
+=====
+https://blog.reedsy.com/book-cover-art/
