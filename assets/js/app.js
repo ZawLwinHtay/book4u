@@ -29,9 +29,10 @@ var favoriteReads = new Splide(".favoriteReads", {
   perPage: 3,
   autoplay: "play",
   breakpoints: {
-    768: { perPage: 2},
-    640: { perPage: 1},
+    768: { perPage: 2 },
+    640: { perPage: 1 },
   },
+  perMove: 1,
 });
 favoriteReads.mount();
 

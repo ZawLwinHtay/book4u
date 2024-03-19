@@ -1,34 +1,24 @@
-.dropdown-toggle::after {
+.invoices .dropdown-toggle::after {
   content: none;
 }
 
-.card-bg {
-  background: #253341;
+.invoices :where(tbody, td, tfoot, th, thead, tr) {
+  border-style: none;
 }
 
-.wh-30 {
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.d-and-t {
-  font-size: 10px !important;
-}
-
-.view {
-  font-size: 10px !important;
-  width: 95px !important;
+.fs-10px {
+  font-size: 12px;
 }
 
 @media screen and (max-width: 778px) {
-  p,
-  .view {
-    font-size: 10px !important;
+}
+
+@media screen and (max-width: 500px) {
+  .invoices :where(tbody, td, tfoot, th, thead, tr) {
+    font-size: 10px;
+    color: red;
   }
-  .view {
-    width: 100px !important;
+  .fs-10px {
+    font-size: 8px;
   }
 }

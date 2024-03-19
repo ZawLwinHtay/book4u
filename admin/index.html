@@ -9,6 +9,11 @@
       type="image/x-icon"
     />
     <title>Book4U</title>
+    <!-- swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <!-- splid -->
     <link
       href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
@@ -51,6 +56,7 @@
     />
     <!-- style.css -->
     <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!-- container -->
@@ -59,7 +65,7 @@
       <div id="to_top"></div>
       <!-- navbar for small screen -->
       <nav
-        class="navbar d-lg-none navbar-expand-lg py-0 bg-transparent shadow-lg nav-bar-container"
+        class="navbar d-lg-none navbar-expand-lg position-fixed fixed-top py-0 bg-body shadow-sm nav-bar-container"
       >
         <div class="container-fluid justify-content-start align-items-center">
           <div class="d-flex align-items-center gap-3">
@@ -75,7 +81,7 @@
             </button>
             <!-- logo -->
             <a
-              class="navbar-brand py-3 d-flex align-items-center gap-3"
+              class="navbar-brand py-3 d-flex gap-3 align-items-center justify-content-between"
               href="#"
             >
               <img
@@ -83,13 +89,15 @@
                 class="wh-50 object-fit-contain logo-img"
                 alt=""
               />
-              <h2 class="mb-0 text-uppercase text-primary fw-bold">book4u</h2>
+              <h2 class="mb-0 text-uppercase text-primary fw-bold logo-font">
+                book4u
+              </h2>
             </a>
           </div>
           <!-- navbar hide btn -->
           <!-- navbarSupportedContent -->
           <button
-            class="navbar-toggler btn text-primary  outline-none fs-1 fw-bold ms-auto show-hide-btn"
+            class="navbar-toggler btn text-primary outline-none fs-1 fw-bold ms-auto show-hide-btn"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -103,7 +111,7 @@
       </nav>
       <!-- sidebar -->
       <div
-        class="offcanvas offcanvas-lg w-lg-25 offcanvas-start shadow-lg "
+        class="offcanvas offcanvas-lg w-lg-25 offcanvas-start shadow-lg"
         data-bs-scroll="true"
         tabindex="-1"
         id="offcanvasWithBothOptions"
@@ -111,7 +119,7 @@
       >
         <!-- posi fix -->
         <div
-          class="offcanvas-header h-80px d-flex align-items-center justify-content-between shadow-sm z-3"
+          class="offcanvas-header h-80px d-flex align-items-center gap-3 shadow-sm z-3"
         >
           <h5 class="offcanvas-title w-100" id="offcanvasWithBothOptionsLabel">
             <!-- logo for desktop -->
@@ -124,7 +132,9 @@
                 class="wh-50 object-fit-contain logo-img"
                 alt=""
               />
-              <h2 class="mb-0 text-uppercase text-primary fw-bold">book4u</h2>
+              <h2 class="mb-0 text-uppercase text-primary fw-bold logo-font">
+                book4u
+              </h2>
             </a>
           </h5>
           <button
@@ -133,24 +143,24 @@
             data-bs-dismiss="offcanvas"
             aria-label="Close"
           >
-            <i class="fa-solid fa-xmark fs-2 text-primary "></i>
+            <i class="fa-solid fa-xmark fs-2 text-primary"></i>
           </button>
         </div>
         <!-- sidebar body -->
-        <div class="offcanvas-body flex-column pt-1">
+        <div class="offcanvas-body flex-column pt-1 sidebar">
           <div class="accordion accordion-flush" id="accordionExample">
             <div class="accordion-item">
               <h2 class="accordion-header">
                 <button
-                  class="accordion-button text-color outline-none gap-3 fs-5 fw-semibold"
+                  class="accordion-button text-color outline-none gap-3 fs-5 fw-semibold active"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#collapseOne"
                   aria-expanded="true"
                   aria-controls="collapseOne"
                 >
-                  <i class="fa-solid fa-shop"></i>
-                  <span>Shop</span>
+                  <i class="fa-solid fa-user-gear"></i>
+                  <span>Admin</span>
                 </button>
               </h2>
               <div
@@ -161,52 +171,40 @@
                 <div class="accordion-body pt-0">
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item px-0 active">
-                      <button
-                        class="w-100 h-100 rounded d-flex align-items-center text-color gap-3 text-start ps-4 py-2 outline-none bg-transparent"
+                      <a
+                        href="#dashboard"
+                        class="w-100 h-100 nav-link rounded d-flex align-items-center text-color gap-3 text-start ps-4 py-2 outline-none bg-transparent"
                       >
                         <i class="fa-solid fa-house"></i>
-                        <span>Home</span>
-                      </button>
+                        <span>Dashboard</span>
+                      </a>
                     </li>
                     <li class="list-group-item px-0">
-                      <button
-                        class="w-100 h-100 rounded d-flex align-items-center text-color gap-3 text-start ps-4 py-2 outline-none bg-transparent"
+                      <a
+                        href="#category"
+                        class="w-100 h-100 nav-link rounded d-flex align-items-center text-color gap-3 text-start ps-4 py-2 outline-none bg-transparent"
                       >
                         <i class="fa-solid fa-table"></i>
-                        <span>Category Page</span>
-                      </button>
+                        <span>Books Category</span>
+                      </a>
                     </li>
                     <li class="list-group-item px-0">
-                      <button
-                        class="w-100 h-100 rounded d-flex align-items-center text-color gap-3 text-start ps-4 py-2 outline-none bg-transparent"
+                      <a
+                        href="#author"
+                        class="w-100 h-100 nav-link rounded d-flex align-items-center text-color gap-3 text-start ps-4 py-2 outline-none bg-transparent"
+                      >
+                        <i class="fa-solid fa-user"></i>
+                        <span>Author</span>
+                      </a>
+                    </li>
+                    <li class="list-group-item px-0">
+                      <a
+                        href="#books"
+                        class="w-100 h-100 nav-link rounded d-flex align-items-center text-color gap-3 text-start ps-4 py-2 outline-none bg-transparent"
                       >
                         <i class="fa-solid fa-book"></i>
-                        <span>Book Page</span>
-                      </button>
-                    </li>
-                    <li class="list-group-item px-0">
-                      <button
-                        class="w-100 h-100 rounded d-flex align-items-center text-color gap-3 text-start ps-4 py-2 outline-none bg-transparent"
-                      >
-                        <i class="fa-solid fa-file-pdf"></i>
-                        <span>Book PDF</span>
-                      </button>
-                    </li>
-                    <li class="list-group-item px-0">
-                      <button
-                        class="w-100 h-100 rounded d-flex align-items-center text-color gap-3 text-start ps-4 py-2 outline-none bg-transparent"
-                      >
-                        <i class="fa-solid fa-check-to-slot"></i>
-                        <span>Checkout</span>
-                      </button>
-                    </li>
-                    <li class="list-group-item px-0">
-                      <button
-                        class="w-100 h-100 rounded d-flex align-items-center text-color gap-3 text-start ps-4 py-2 outline-none bg-transparent"
-                      >
-                        <i class="fa-solid fa-list-check"></i>
-                        <span>Wishlist</span>
-                      </button>
+                        <span>Books</span>
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -222,8 +220,8 @@
                   aria-expanded="false"
                   aria-controls="collapseTwo"
                 >
-                  <i class="fa-solid fa-gear"></i>
-                  <span>Setting</span>
+                  <i class="fa-solid fa-users-gear"></i>
+                  <span>User</span>
                 </button>
               </h2>
               <div
@@ -234,28 +232,92 @@
                 <div class="accordion-body pt-0">
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item px-0">
-                      <button
-                        class="w-100 h-100 rounded d-flex align-items-center text-color gap-3 text-start ps-4 py-2 outline-none bg-transparent"
+                      <a
+                        href="#"
+                        class="w-100 h-100 nav-link rounded d-flex align-items-center text-color gap-3 text-start ps-4 py-2 outline-none bg-transparent"
+                      >
+                        <i class="fa-solid fa-user"></i>
+                        <span>User Profile</span>
+                      </a>
+                    </li>
+                    <li class="list-group-item px-0">
+                      <a
+                        href="#"
+                        class="w-100 h-100 nav-link rounded d-flex align-items-center text-color gap-3 text-start ps-4 py-2 outline-none bg-transparent"
+                      >
+                        <i class="fa-solid fa-user-pen"></i>
+                        <span>User Edit</span>
+                      </a>
+                    </li>
+                    <li class="list-group-item px-0">
+                      <a
+                        href="#"
+                        class="w-100 h-100 nav-link rounded d-flex align-items-center text-color gap-3 text-start ps-4 py-2 outline-none bg-transparent"
+                      >
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span>User Add</span>
+                      </a>
+                    </li>
+                    <li class="list-group-item px-0">
+                      <a
+                        href="#"
+                        class="w-100 h-100 nav-link rounded d-flex align-items-center text-color gap-3 text-start ps-4 py-2 outline-none bg-transparent"
+                      >
+                        <i class="fa-solid fa-address-book"></i>
+                        <span>User List</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed text-color outline-none gap-3 fs-5 fw-semibold"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  <i class="fa-solid fa-gear"></i>
+                  <span>Setting</span>
+                </button>
+              </h2>
+              <div
+                id="collapseThree"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body pt-0">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item px-0">
+                      <a
+                        href="#"
+                        class="w-100 h-100 nav-link rounded d-flex align-items-center text-color gap-3 text-start ps-4 py-2 outline-none bg-transparent"
                       >
                         <i class="fa-solid fa-user"></i>
                         <span>Profile</span>
-                      </button>
+                      </a>
                     </li>
                     <li class="list-group-item px-0">
-                      <button
-                        class="w-100 h-100 rounded d-flex align-items-center text-color gap-3 text-start ps-4 py-2 outline-none bg-transparent"
+                      <a
+                        href="#"
+                        class="w-100 h-100 nav-link rounded d-flex align-items-center text-color gap-3 text-start ps-4 py-2 outline-none bg-transparent"
                       >
                         <i class="fa-solid fa-key"></i>
                         <span>Change Password</span>
-                      </button>
+                      </a>
                     </li>
                     <li class="list-group-item px-0">
-                      <button
-                        class="w-100 h-100 rounded d-flex align-items-center text-color gap-3 text-start ps-4 py-2 outline-none bg-transparent"
+                      <a
+                        href="#"
+                        class="w-100 h-100 nav-link rounded d-flex align-items-center text-color gap-3 text-start ps-4 py-2 outline-none bg-transparent"
                       >
                         <i class="fa-solid fa-arrow-right-from-bracket"></i>
                         <span>Logout</span>
-                      </button>
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -274,9 +336,9 @@
             </a>
           </div>
           <!-- navbar -->
-          <section class="row position-relative" id="services">
+          <section class="row position-relative" id="navbar">
             <nav
-              class="nav-bar navbar navbar-expand-lg col-12 col-lg-9 h-80px bg-transparent shadow-lg position-fixed fixed-top ms-auto"
+              class="nav-bar navbar navbar-expand-lg col-12 col-lg-9 h-80px bg-body shadow-sm position-fixed fixed-top ms-auto"
             >
               <div class="container-fluid">
                 <div
@@ -289,8 +351,8 @@
                       <input
                         type="text"
                         class="form-control border-1 border-primary"
-                        placeholder="Search Book . . ."
-                        aria-label="Search Book . . ."
+                        placeholder="Search Setting..."
+                        aria-label="Search Setting..."
                         aria-describedby="basic-addon2"
                       />
                       <button
@@ -331,21 +393,6 @@
                             <span
                               class="position-absolute top-0 start-100 translate-middle p-2 bg-info border border-light rounded-circle"
                             >
-                            </span>
-                          </button>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">
-                          <button
-                            type="button"
-                            class="btn btn-primary position-relative"
-                          >
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            <span
-                              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                            >
-                              8
                             </span>
                           </button>
                         </a>
@@ -395,11 +442,210 @@
               </div>
             </nav>
           </section>
+          <!-- dashboard -->
+          <section
+            class="row position-relative mx-0 p-block overflow-hidden"
+            id="dashboard"
+          >
+            <div class="col-12 py-4">
+              <div class="row">
+                <div class="col-12 col-sm-6 col-lg-3 mt-3 mt-sm-4 mt-lg-0">
+                  <div class="py-2 px-4 shadow-md rounded">
+                    <div class="row align-items-center">
+                      <div
+                        class="col-4 flex-center fs-4 bg-info text-white rounded-circle wh-50"
+                      >
+                        <i class="fa-solid fa-user"></i>
+                      </div>
+                      <div class="col-8">
+                        <h3 class="fw-bold text-primary mb-0">Users</h3>
+                        <p class="mb-0">3000</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 mt-3 mt-sm-4 mt-lg-0">
+                  <div class="py-2 px-4 shadow-md rounded">
+                    <div class="row align-items-center">
+                      <div
+                        class="col-4 flex-center fs-4 bg-info text-white rounded-circle wh-50"
+                      >
+                        <i class="fa-solid fa-book"></i>
+                      </div>
+                      <div class="col-8">
+                        <h3 class="fw-bold text-primary mb-0">Books</h3>
+                        <p class="mb-0">4.2k</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 mt-3 mt-sm-4 mt-lg-0">
+                  <div class="py-2 px-4 shadow-md rounded">
+                    <div class="row align-items-center">
+                      <div
+                        class="col-4 flex-center fs-4 bg-info text-white rounded-circle wh-50"
+                      >
+                        <i class="fa-solid fa-cart-shopping"></i>
+                      </div>
+                      <div class="col-8">
+                        <h3 class="fw-bold text-primary mb-0">Sale</h3>
+                        <p class="mb-0">1.2k</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 mt-3 mt-sm-4 mt-lg-0">
+                  <div class="py-2 px-4 shadow-md rounded">
+                    <div class="row align-items-center">
+                      <div
+                        class="col-4 flex-center fs-4 bg-info text-white rounded-circle wh-50"
+                      >
+                        <i class="fa-solid fa-comments-dollar"></i>
+                      </div>
+                      <div class="col-8">
+                        <h3 class="fw-bold text-primary mb-0">Orders</h3>
+                        <p class="mb-0">720</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Open Invoices -->
+            <div class="col-12 py-4 invoices">
+              <div class="card">
+                <div
+                  class="card-header d-flex align-content-center justify-content-between"
+                >
+                  <h3 class="fw-bold text-primary">Open Invoices</h3>
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-light rounded-circle wh-40 dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-light">
+                      <li>
+                        <a
+                          class="dropdown-item text-color d-flex align-items-center gap-2"
+                          href="#"
+                        >
+                          <i class="fa-regular fa-eye"></i>
+                          <span>View</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item text-color d-flex align-items-center gap-2"
+                          href="#"
+                        >
+                          <i class="fa-solid fa-trash"></i>
+                          <span>Delete</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item text-color d-flex align-items-center gap-2"
+                          href="#"
+                        >
+                          <i class="fa-solid fa-file-pen"></i>
+                          <span>Edit</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item text-color d-flex align-items-center gap-2"
+                          href="#"
+                        >
+                          <i class="fa-solid fa-print"></i>
+                          <span>Print</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item text-color d-flex align-items-center gap-2"
+                          href="#"
+                        >
+                          <i class="fa-solid fa-file-arrow-down"></i>
+                          <span>Download</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="card-body py-0">
+                  <table class="table">
+                    <thead class="">
+                      <tr  class="">
+                        <th scope="col">Client</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Invoice</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="">
+                        <td>Ira Membrit</td>
+                        <td>18/10/2019</td>
+                        <td>20156</td>
+                        <td>$1500</td>
+                        <td><small class="btn btn-primary px-1 px-md-2 py-1 fs-10px">paid</small></td>
+                        <td>Copy</td>
+                      </tr>
+                      <tr class="">
+                        <td>Ira Membrit</td>
+                        <td>18/10/2019</td>
+                        <td>20156</td>
+                        <td>$1500</td>
+                        <td><small class="btn btn-primary px-1 px-md-2 py-1 fs-10px">paid</small></td>
+                        <td>Copy</td>
+                      </tr>
+                      <tr class="">
+                        <td>Ira Membrit</td>
+                        <td>18/10/2019</td>
+                        <td>20156</td>
+                        <td>$1500</td>
+                        <td><small class="btn btn-primary px-1 px-md-2 py-1 fs-10px">paid</small></td>
+                        <td>Copy</td>
+                      </tr>
+                      <tr class="">
+                        <td>Ira Membrit</td>
+                        <td>18/10/2019</td>
+                        <td>20156</td>
+                        <td>$1500</td>
+                        <td><small class="btn btn-danger px-1 px-md-2 py-1 fs-10px">past due</small></td>
+                        <td>Copy</td>
+                      </tr>
+                      <tr class="">
+                        <td>Ira Membrit</td>
+                        <td>18/10/2019</td>
+                        <td>20156</td>
+                        <td>$1500</td>
+                        <td><small class="btn btn-primary px-1 px-md-2 py-1 fs-10px">paid</small></td>
+                        <td>Copy</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- footer -->
+          <footer class="row position-relative footer" id="footer">
+            <div class="col-12 p-4 bg-primary-subtle text-center ">
+              Copyright 2024 <a href="index.html" class="text-primary">Book For You</a> All Rights Reserved.
+            </div>
+          </footer>
           <!-- template -->
           <!-- <section class="row position-relative" id="services">
-            <div class="col-12 py-4 bg-black" style="height: 100vh">hello</div>
-          </section>
-          <section class="row position-relative" id="services">
+            <div class="col-12 py-4 bg-info" style="height: 100vh">hello</div>
+          </section> -->
+          <!-- <section class="row position-relative" id="services">
             <div class="col-12 py-4 bg-black" style="height: 100vh">hello</div>
           </section> -->
         </div>
@@ -412,6 +658,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <!-- swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <!-- splide -->
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <!-- bootstrap -->

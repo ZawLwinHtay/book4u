@@ -45,7 +45,7 @@ body {
   justify-content: center;
 }
 
-.wh-25{
+.wh-25 {
   width: 25px;
   height: 25px;
 }
@@ -175,13 +175,18 @@ body {
 }
 
 .shadow-md {
-  box-shadow: 2px 2px 4px #000;
+  box-shadow: 2px 2px 5px var(--text-color);
 }
 
 .swiper-slide img {
   display: block;
   height: 100%;
   width: 100%;
+}
+
+.sidebar .active{
+  color: var(--primary-color);
+  background: none;
 }
 
 /* to top */
@@ -196,6 +201,12 @@ body {
 .show-top-btn {
   bottom: 20px;
 }
+
+.swiper-slide {
+  cursor: pointer;
+}
+
+
 
 /* .next-pre .splide__arrows {
   display: flex;
@@ -271,12 +282,16 @@ body {
 }
 
 /* favorite reads */
-div.progress{
-  height: 8px;
+button.splide__arrow {
+  display: none;
+}
+
+div.progress {
+  height: 5px;
   background: var(--hover-soft);
 }
 
-.readNowBtn:hover span{
+.readNowBtn:hover span {
   color: var(--primary-color);
   text-decoration: underline;
 }
@@ -298,11 +313,11 @@ div.progress{
     margin-bottom: 5px;
   }
 
-  .writer-text h5{
+  .writer-text h5 {
     font-size: 13px;
   }
 
-  .writer-text p{
+  .writer-text p {
     font-size: 11px;
   }
 }
