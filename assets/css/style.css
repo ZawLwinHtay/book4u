@@ -352,3 +352,29 @@ div.progress {
     transform: translateX(0%);
   }
 }
+
+/* admin */
+.invoices .dropdown-toggle::after {
+  content: none;
+}
+
+.invoices :where(tbody, td, tfoot, th, thead, tr) {
+  border-style: none;
+}
+
+.fs-10px {
+  font-size: 12px;
+}
+
+@media screen and (max-width: 778px) {
+}
+
+@media screen and (max-width: 500px) {
+  .invoices :where(tbody, td, tfoot, th, thead, tr) {
+    font-size: 10px;
+    color: red;
+  }
+  .fs-10px {
+    font-size: 8px;
+  }
+}
