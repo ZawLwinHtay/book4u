@@ -142,21 +142,6 @@ section,
   color: var(--primary-color);
 }
 
-/* html,
-body {
-  position: relative;
-  height: 100%;
-} */
-
-/* body {
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
-} */
-
 .swiper {
   width: 100%;
   padding-bottom: 50px;
@@ -205,33 +190,6 @@ body {
 .swiper-slide {
   cursor: pointer;
 }
-
-/* .next-pre .splide__arrows {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-} */
-
-/* .next-pre .splide__arrow {
-  position: static;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: inherit;
-  background: #e2d703;
-  color: #1a232c;
-  transition: 0.1s;
-} */
-
-/* .next-pre .splide__arrow:hover {
-  scale: 1.1;
-} */
-
-/* .next-pre .splide__arrow--next,
-.next-pre .splide__arrow--pre {
-  right: initial;
-  left: initial;
-} */
 
 /* browse books */
 .browse-book-card {
